@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DATAFILTR</title>
+    <link rel="stylesheet" href="/static/css/styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <h1>DATAFILTR</h1>
+        <nav>
+          <button class="nav-button" id="uploadBtn">Cargar Excel</button>
+          <button class="nav-button active" id="viewDataBtn">Ver datos</button>
+          <button class="nav-button" id="detectBtn">Detectar faltantes</button>
+          <button class="nav-button" id="updateBtn">Actualizar datos</button>
+          <button class="nav-button" id="missingReportBtn">Descargar reporte de faltantes</button>
+          <button class="nav-button" id="downloadDataBtn">Descargar datos</button>
+        </nav>
+        <button class="nav-button settings-button" id="settingsBtn" type="button">Configuración</button>
+      </aside>
+
+      <main class="main-content">
+        <header class="topbar">
+          <h2>Resumen</h2>
+        </header>
+
+        <section class="summary-grid">
+          <div class="summary-card">
+            <span>Total de registros</span>
+            <strong id="totalRecords">0</strong>
+          </div>
+          <div class="summary-card">
+            <span>Registros completos</span>
+            <strong id="completeRecords">0</strong>
+          </div>
+          <div class="summary-card">
+            <span>Registros con faltantes</span>
+            <strong id="missingRecordsCount">0</strong>
+          </div>
+          <div class="summary-card">
+            <span>Cantidad total de campos faltantes</span>
+            <strong id="missingFieldsTotal">0</strong>
+          </div>
+          <div class="summary-card">
+            <span>Porcentaje de completitud</span>
+            <strong id="completenessRate">0%</strong>
+          </div>
+        </section>
+
+        <section class="panel file-status-panel">
+          <div class="panel-header">
+            <h3>Información del archivo</h3>
+          </div>
+          <div id="statusMessage" class="status-message">No hay archivo cargado.</div>
+          <input type="file" id="excelFileInput" accept=".xlsx,.xls" hidden />
+        </section>
+
+        <section class="panel view-panel" id="mainDataPanel" data-view="data">
+          <div class="panel-header">
+            <h3>Tabla principal</h3>
+          </div>
+          <div class="table-wrapper">
+            <table id="mainTable">
+              <thead></thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="panel view-panel" id="missingDataPanel" data-view="missing" hidden>
+          <div class="panel-header">
+            <h3>Registros con faltantes</h3>
+          </div>
+          <div class="table-wrapper small">
+            <table id="missingTable">
+              <thead></thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <div class="modal-backdrop" id="settingsModal" hidden>
+      <section class="settings-modal" role="dialog" aria-modal="true" aria-labelledby="settingsTitle">
+        <div class="modal-header">
+          <h2 id="settingsTitle">Configuración de sesión</h2>
+          <button class="modal-close" id="closeSettingsBtn" type="button" aria-label="Cerrar">×</button>
+        </div>
+        <p class="modal-description">Administra la carga activa y el historial de esta sesión. Los archivos originales no se eliminan.</p>
+        <div id="sessionInfo" class="session-info">Cargando información...</div>
+        <div class="modal-actions">
+          <button class="danger-button" id="clearSessionBtn" type="button">Limpiar datos de sesión</button>
+          <button class="secondary-button" id="cancelSettingsBtn" type="button">Cerrar</button>
+        </div>
+      </section>
+    </div>
+
+    <script src="/static/js/app.js"></script>
+  </body>
+</html>

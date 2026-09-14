@@ -1,0 +1,230 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f3f6fb;
+  color: #1f2937;
+}
+
+.app-shell {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  width: 280px;
+  background: #0f172a;
+  color: white;
+  padding: 24px 18px;
+}
+
+.sidebar h1 {
+  margin: 0 0 24px;
+  font-size: 2rem;
+}
+
+.nav-button {
+  display: block;
+  width: 100%;
+  border: none;
+  background: #1e293b;
+  color: white;
+  padding: 12px 14px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.nav-button:hover {
+  background: #334155;
+}
+
+.nav-button.active {
+  background: #0e7490;
+}
+
+.settings-button {
+  margin-top: auto;
+  background: #334155;
+}
+
+.main-content {
+  flex: 1;
+  padding: 24px;
+}
+
+.topbar {
+  margin-bottom: 18px;
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.summary-card {
+  background: white;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.08);
+}
+
+.summary-card span {
+  display: block;
+  color: #64748b;
+  margin-bottom: 8px;
+}
+
+.summary-card strong {
+  font-size: 1.6rem;
+}
+
+.panel {
+  background: white;
+  padding: 18px;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.08);
+  margin-bottom: 20px;
+}
+
+.file-status-panel {
+  border-left: 4px solid #0e7490;
+}
+
+.view-panel[hidden] {
+  display: none;
+}
+
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.status-message {
+  background: #e2e8f0;
+  padding: 10px 12px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.table-wrapper {
+  overflow: auto;
+  max-width: 100%;
+}
+
+.table-wrapper.small {
+  max-height: 260px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 1100px;
+}
+
+th,
+td {
+  border: 1px solid #e2e8f0;
+  padding: 10px 12px;
+  text-align: left;
+  font-size: 0.9rem;
+}
+
+th {
+  background: #f8fafc;
+}
+
+tr.incomplete {
+  background: #fff7ed;
+}
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background: rgba(15, 23, 42, 0.58);
+  z-index: 10;
+}
+
+.modal-backdrop[hidden] {
+  display: none;
+}
+
+.settings-modal {
+  width: min(560px, 100%);
+  max-height: 80vh;
+  overflow: auto;
+  background: white;
+  border-radius: 12px;
+  padding: 22px;
+  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.25);
+}
+
+.modal-header,
+.modal-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.modal-close {
+  border: 0;
+  background: transparent;
+  color: #475569;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
+.modal-description,
+.session-info {
+  color: #475569;
+  line-height: 1.5;
+}
+
+.session-info {
+  margin: 18px 0;
+  padding: 14px;
+  background: #f8fafc;
+  border-radius: 8px;
+}
+
+.session-info h3 {
+  color: #1f2937;
+  font-size: 1rem;
+  margin-bottom: 8px;
+}
+
+.session-info ul {
+  padding-left: 20px;
+}
+
+.danger-button,
+.secondary-button {
+  border: 0;
+  border-radius: 8px;
+  padding: 10px 14px;
+  cursor: pointer;
+}
+
+.danger-button {
+  background: #dc2626;
+  color: white;
+}
+
+.secondary-button {
+  background: #e2e8f0;
+  color: #1f2937;
+}
