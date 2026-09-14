@@ -5,9 +5,9 @@ from typing import Any
 
 import pandas as pd
 
-from app.core.exceptions import DataValidationError
-from app.utils.dataframe_utils import ensure_columns, is_unnamed_header, normalize_header_name
-from app.utils.normalization import normalize_ruc, normalize_value, normalize_year
+from ..core.exceptions import DataValidationError
+from ..utils.dataframe_utils import ensure_columns, is_unnamed_header, normalize_header_name
+from ..utils.normalization import normalize_ruc, normalize_value, normalize_year
 
 EXPECTED_COLUMNS = [
     "Número",

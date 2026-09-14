@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import pandas as pd
 
-from app.core.exceptions import UpdateDataError
+from ..core.exceptions import UpdateDataError
 
 
 def apply_excel_update(main_df: pd.DataFrame, update_df: pd.DataFrame):

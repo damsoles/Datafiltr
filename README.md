@@ -33,6 +33,18 @@ Luego abrir en el navegador:
 
 http://localhost:8001
 
+## Despliegue en Vercel
+
+Configura el proyecto conectado a la rama `main` con estos valores:
+
+```text
+Root Directory: vacío
+Build Command: pip install -r requirements.txt
+Start Command: automático
+```
+
+El entrypoint de FastAPI está declarado en `pyproject.toml` como `backend.app.main:app`.
+
 ## Estado actual
 
 La aplicación actualmente permite:
